@@ -17,7 +17,7 @@ class EmployeesAddForm extends Component {
         })
     }
 
-    onSubmit = (e) => {
+    onSubmit = (e) => { // Разобраться в коде
         e.preventDefault();
         this.props.onAdd(this.state.name, this.state.salary);
         this.setState({
@@ -40,13 +40,15 @@ class EmployeesAddForm extends Component {
                         placeholder="Как его зовут?"
                         name="name"
                         value={name} 
-                        onChange={this.onValueChange}/>
+                        onChange={this.onValueChange}
+                        required />
                     <input type="number"
                         className="form-control new-post-label"
                         placeholder="З/П в $?"
                         name="salary"
                         value={salary} 
-                        onChange={this.onValueChange}/>
+                        onChange={this.onValueChange}
+                        required />
     
                     <button type="submit"
                             className="btn btn-outline-light">Добавить</button>
